@@ -1,0 +1,10 @@
+%h1 Page des activités
+
+%table
+  - @current_month.each_day do |i|
+    %tr
+      %td
+        = i
+      %td Activité du matin
+      %td Activité de l'après midi
+
