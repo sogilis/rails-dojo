@@ -1,10 +1,12 @@
 %h1 Page des activités
 
 %table
-  - @current_month.each_day do |i|
+  - @daily_activities.each_day do |day, morning, afternoon|
     %tr
       %td
-        = i
-      %td Activité du matin
-      %td Activité de l'après midi
+        = day
+      %td.activity{'data-empty': morning.empty?}
+        = morning.description
+      %td.activity{'data-empty': afternoon.empty?}
+        = afternoon.description
 
